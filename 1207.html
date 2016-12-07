@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*這是第三種解法把BODY的字體設為0但是在要出現字的地方設定文字大小才會出現*/
+        body{
+            font-size: 0;
+        }
+        .box{
+            /*block本身只會往下設定inline-block之後就會開始浮動而且會有間距*/
+            /*用float:left;也可以讓彼此沒間距但要調margin問題*/
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            /*第一種解法就是把象素4PX給設定調*/
+            /*margin-left:4px;*/
+            background-color: #CCC;
+            font-size: 16px;
+        }
+    
+    </style>
+</head>
+<body>
+        <!--第二種解決是後面註解掉在上行跟下行中間設註解   -->
+    <div class="box">1231456</div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

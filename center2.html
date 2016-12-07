@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*因為inline-block的置中無法用在一父一子的狀態下所以才會給::before這個虛擬元素讓容器裡面是有兩個子元素可以置中然後要注意font-size是設在哪邊不然字會不見 */
+        .container{
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+            height: 800px;
+            width: 1200px;
+            background-color: #2ab7ac;
+        }
+        .box{
+            display: inline-block;
+            vertical-align: middle;
+            width: 300px;
+            height: 600px;
+            background-color: coral;
+            font-size: 0;
+            overflow: auto;
+        }
+        /*這邊給before或者after都可以重點是要多要一個虛擬子元素*/
+        .box::before{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .box .content{
+            vertical-align: middle;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <h1>qwer</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In possimus voluptatem minus vero. Aliquam amet expedita, saepe dicta necessitatibus fugiat magnam ipsa consequatur illum dolore facere maiores rerum nisi quidem!</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <h1>qwer</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In possimus voluptatem minus vero. Aliquam amet expedita, saepe dicta necessitatibus fugiat magnam ipsa consequatur illum dolore facere maiores rerum nisi quidem!</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <h1>qwer</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In possimus voluptatem minus vero. Aliquam amet expedita, saepe dicta necessitatibus fugiat magnam ipsa consequatur illum dolore facere maiores rerum nisi quidem!</p>
+            </div>
+        </div>
+              
+        
+        
+        
+        
+        
+        
+    </div>
+</body>
+</html>

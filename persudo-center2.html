@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 這邊很重要一定要設定*/
+        /* 因為強制IE也套用*/
+        /* 這邊BODY是父元素所以設定字要置中在這*/
+        body,html{
+            height: 100%;
+            text-align: center;
+            font-size: 0;
+        }
+        /* 這邊只能用before不能用after*/
+        body::before{
+            /*虛擬元素後面一定要有前面三種才會執行*/
+            /*設定height: 100%;就可以跟BODY呼應成為垂直置中*/
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .box{
+            /*一定要和前面設一樣的display: inline-block;
+            vertical-align: middle;*/
+            display: inline-block;
+            vertical-align: middle;
+            width: 600px;
+            height: 300px;
+            background-color: #cc69f7;
+            text-align: left;
+        }
+        img{
+            display:inline-block;
+            vertical-align: middle;
+            width: 300px;
+        }
+        .box .p{
+                display:inline-block;
+                vertical-align:middle;
+                width: 295px;
+                font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+           <img src="http://lorempicsum.com/nemo/300/300/1" alt="">
+            <div class="p">
+                <h1>qwert</h1>
+                    <p>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem sequi totam ratione, nostrum velit, aut! Aliquam similique quam, rem cum qui culpa, veritatis est! Tempora libero suscipit harum incidunt, tenetur.
+                    </p>
+            </div>
+    </div>
+</body>
+</html>
